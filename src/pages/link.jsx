@@ -75,11 +75,11 @@ const LinkPage = () => {
             {url?.title}
           </span>
           <a
-            href={`https://trimylink.vercel.app/${link}`}
+            href={`${window.location.origin}/${link}`}
             target="_blank"
             className="text-2xl font-bold text-[#00ffcc] hover:text-[#00ffcc]/80 transition-colors cursor-pointer break-all"
           >
-            https://trimylink.vercel.app/{link}
+            {window.location.host}/{link}
           </a>
           <a
             href={url?.original_url}
@@ -101,7 +101,7 @@ const LinkPage = () => {
               title="Copy Link"
               className="text-slate-400 hover:text-teal-400 hover:bg-teal-500/10 hover:border-teal-500/20 border border-transparent rounded-lg transition-all cursor-pointer"
               onClick={() =>
-                navigator.clipboard.writeText(`https://trimylink.vercel.app/${link}`)
+                navigator.clipboard.writeText(`${window.location.origin}/${link}`)
               }
             >
               <Copy className="h-4 w-4 cursor-pointer" />

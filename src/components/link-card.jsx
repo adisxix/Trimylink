@@ -37,7 +37,7 @@ const LinkCard = ({url = {}, fetchUrls}) => {
             {url?.title}
           </span>
           <span className="text-lg font-bold text-[#00ffcc] hover:text-[#00ffcc]/80 cursor-pointer transition-colors truncate">
-            https://trimylink.vercel.app/{url?.custom_url ? url?.custom_url : url.short_url}
+            {window.location.host}/{url?.custom_url ? url?.custom_url : url.short_url}
           </span>
           <span className="flex items-center gap-1.5 text-slate-400 hover:text-slate-300 cursor-pointer transition-colors text-sm truncate">
             <LinkIcon className="h-3.5 w-3.5 shrink-0 cursor-pointer" />
@@ -58,7 +58,7 @@ const LinkCard = ({url = {}, fetchUrls}) => {
           className="text-slate-400 hover:text-teal-400 hover:bg-teal-500/10 hover:border-teal-500/20 border border-transparent rounded-lg transition-all cursor-pointer"
           onClick={() => {
             navigator.clipboard.writeText(
-              `https://trimylink.vercel.app/${
+              `${window.location.origin}/${
                 url?.custom_url ? url?.custom_url : url?.short_url
               }`
             );

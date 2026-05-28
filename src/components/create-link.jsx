@@ -132,7 +132,7 @@ export function CreateLink() {
 
           <div className="flex items-center gap-2">
             <div className="px-3.5 py-2.5 border border-slate-800 bg-black rounded-xl text-slate-400 text-sm font-semibold shrink-0">
-              trimylink.vercel.app
+              {window.location.host}
             </div>
             <span className="text-slate-700 font-light">/</span>
             <Input
