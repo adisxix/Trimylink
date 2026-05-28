@@ -16,18 +16,14 @@ const LinkPage = () => {
     const imageUrl = url?.qr;
     const fileName = url?.title;
 
-    // Create an anchor element
     const anchor = document.createElement("a");
     anchor.href = imageUrl;
     anchor.download = fileName;
 
-    // Append the anchor to the body
     document.body.appendChild(anchor);
 
-    // Trigger the download by simulating a click event
     anchor.click();
 
-    // Remove the anchor from the document
     document.body.removeChild(anchor);
   };
   const navigate = useNavigate();
@@ -74,7 +70,6 @@ const LinkPage = () => {
       )}
       
       <div className="flex flex-col gap-8 sm:flex-row justify-between">
-        {/* Left Side: Link Details and QR */}
         <div className="flex flex-col items-start gap-6 border border-slate-800 bg-black hover:border-[#00ffcc] rounded-2xl p-6 transition-all duration-300 sm:w-2/5 group shadow-lg">
           <span className="text-4xl sm:text-5xl font-black text-white tracking-tight break-words max-w-full">
             {url?.title}
@@ -99,7 +94,6 @@ const LinkPage = () => {
             Created {new Date(url?.created_at).toLocaleString()}
           </span>
           
-          {/* Actions */}
           <div className="flex gap-2">
             <Button
               variant="ghost"
@@ -141,7 +135,6 @@ const LinkPage = () => {
             </Button>
           </div>
 
-          {/* QR Code Container */}
           <div className="flex items-center justify-center bg-white p-3 rounded-2xl border border-slate-800 shadow-md max-w-[200px] w-full self-center sm:self-start aspect-square">
             <img
               src={url?.qr}
@@ -151,13 +144,11 @@ const LinkPage = () => {
           </div>
         </div>
 
-        {/* Right Side: Stats Panel */}
         <div className="flex-1 border border-slate-800 bg-black hover:border-[#00ffcc] rounded-2xl p-6 transition-all duration-300 shadow-lg sm:w-3/5">
           <h2 className="text-3xl font-black tracking-tight text-[#00ffcc] mb-6">Stats</h2>
           
           {stats && stats.length ? (
             <div className="flex flex-col gap-6">
-              {/* Stat click card */}
               <div className="group relative overflow-hidden rounded-xl border border-slate-800/80 bg-black p-5 transition-all duration-300 hover:border-[#00ffcc] hover:shadow-[0_0_20px_rgba(0,255,204,0.05)]">
                 <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#00ffcc]/5 blur-2xl" />
                 <div className="flex items-center justify-between">
@@ -172,7 +163,6 @@ const LinkPage = () => {
                 </div>
               </div>
 
-              {/* Charts Section */}
               <div className="space-y-6 mt-2">
                 <div className="space-y-2">
                   <h4 className="text-lg font-bold text-white">Location Data</h4>

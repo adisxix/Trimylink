@@ -23,8 +23,6 @@ const RedirectLink = () => {
     if (!loading && data?.original_url) {
       fnStats();
       window.location.replace(data.original_url);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, data]);
 
   if (loading || loadingStats) {

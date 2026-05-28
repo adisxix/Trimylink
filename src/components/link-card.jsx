@@ -23,7 +23,6 @@ const LinkCard = ({url = {}, fetchUrls}) => {
 
   return (
     <div className="flex flex-col sm:flex-row gap-5 border border-slate-800 bg-black hover:border-[#00ffcc] rounded-2xl p-5 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,204,0.04)] hover:-translate-y-0.5 group">
-      {/* QR Code Container */}
       <div className="flex items-center justify-center bg-white p-2.5 rounded-xl border border-slate-800 shadow-md self-start shrink-0">
         <img
           src={url?.qr}
@@ -32,7 +31,6 @@ const LinkCard = ({url = {}, fetchUrls}) => {
         />
       </div>
 
-      {/* Details Section */}
       <div className="flex flex-col flex-1 min-w-0 justify-between gap-2.5">
         <Link to={`/link/${url?.id}`} className="flex flex-col gap-1.5 min-w-0">
           <span className="text-2xl font-bold text-white hover:text-[#00ffcc] cursor-pointer transition-colors line-clamp-1">
@@ -52,7 +50,6 @@ const LinkCard = ({url = {}, fetchUrls}) => {
         </div>
       </div>
 
-      {/* Actions */}
       <div className="flex sm:flex-col justify-end sm:justify-start gap-2 self-end sm:self-center mt-2 sm:mt-0">
         <Button
           variant="ghost"

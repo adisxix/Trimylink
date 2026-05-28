@@ -1,5 +1,3 @@
-// can add sonner from shadcn ui after link created
-
 import {useEffect, useState} from "react";
 import {BarLoader} from "react-spinners";
 import {Filter, Link2, TrendingUp, Search, X} from "lucide-react";
@@ -30,7 +28,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (user?.id) fnUrls();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id]);
 
   const filteredUrls = urls?.filter((url) =>
@@ -49,9 +46,7 @@ const Dashboard = () => {
         </div>
       )}
       
-      {/* Stats Cards Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {/* Card 1: Links Created */}
         <div className="group relative overflow-hidden rounded-2xl border border-slate-800/80 bg-black p-6 transition-all duration-300 hover:border-[#00ffcc] hover:shadow-[0_0_30px_rgba(0,255,204,0.08)]">
           <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#00ffcc]/5 blur-3xl transition-all duration-300 group-hover:bg-[#00ffcc]/10" />
           
@@ -73,7 +68,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Card 2: Total Clicks */}
         <div className="group relative overflow-hidden rounded-2xl border border-slate-800/80 bg-black p-6 transition-all duration-300 hover:border-[#00ffcc] hover:shadow-[0_0_30px_rgba(0,255,204,0.08)]">
           <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#00ffcc]/5 blur-3xl transition-all duration-300 group-hover:bg-[#00ffcc]/10" />
           
@@ -96,7 +90,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Header Area */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#00ffcc]">
           My Links
@@ -104,7 +97,6 @@ const Dashboard = () => {
         <CreateLink />
       </div>
 
-      {/* Search/Filter Box */}
       <div className="relative group">
         <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500 group-focus-within:text-[#00ffcc] transition-colors">
           <Search className="h-5 w-5" />
@@ -132,7 +124,6 @@ const Dashboard = () => {
 
       {error && <Error message={error?.message} />}
 
-      {/* Links List / Empty State */}
       {filteredUrls?.length === 0 ? (
         <div className="flex flex-col items-center justify-center p-12 border border-dashed border-slate-800 rounded-2xl bg-slate-950/10 text-center">
           <div className="h-16 w-16 bg-slate-900/60 rounded-full flex items-center justify-center border border-slate-800 text-slate-500 mb-4">

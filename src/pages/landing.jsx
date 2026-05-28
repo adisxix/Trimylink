@@ -157,8 +157,6 @@ const LandingPage = () => {
               setContactResponseType("error")
               return
             }
-
-            // success
             setContactResponse("Thanks — we'll reach out to you shortly.")
             setContactResponseType("success")
             setContactName("")

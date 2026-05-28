@@ -79,7 +79,6 @@ export async function signup(formData) {
   let session = data?.session;
   let user = data?.user;
 
-  // If signup didn't return a session, sign in to get one
   if (!session) {
     const {data: loginData, error: loginError} =
       await supabase.auth.signInWithPassword({email, password});
@@ -93,10 +92,6 @@ export async function signup(formData) {
     session = loginData.session;
     user = loginData.user;
   }
-
-
-
-  // Now we have a valid session — upload profile pic
   let profilePicUrl = null;
   if (formData?.profile_pic && user?.id) {
     const fileExt = formData.profile_pic.name.split(".").pop();

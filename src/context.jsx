@@ -12,8 +12,6 @@ const UrlProvider = ({children}) => {
 
   useEffect(() => {
     fetchUser();
-    // fetchUser may be unstable across renders from the hook; run once on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
