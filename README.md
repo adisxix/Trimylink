@@ -125,13 +125,7 @@ Create the following buckets under **Storage** and mark them as **Public**:
 * **`qrs`**: Used to upload and store generated QR code images.
 * **`profile_pic`**: Used to upload user avatar pictures during signup.
 
----
+## 📄 License
 
-## 🌐 Deployment on Vercel
+This project is licensed under the MIT License - see the [LICENSE](file:///c:/Users/adsha/Desktop/Aditya/REACT%20JS/Projects/Trimylink%20-%20URL%20Shortener/LICENSE) file for details.
 
-The application includes a [vercel.json](file:///c:/Users/adsha/Desktop/Aditya/REACT%20JS/Projects/Trimylink%20-%20URL%20Shortener/vercel.json) file to route all sub-paths back to `index.html`. This ensures that directly accessing short links (e.g. `https://trimylink.vercel.app/my-link`) redirects properly without returning a 404 page.
-
-When deploying to Vercel:
-1. Link your GitHub repository.
-2. In the **Environment Variables** configuration, enter your `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`.
-3. Deploy!
