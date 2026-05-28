@@ -61,6 +61,7 @@ export function CreateLink() {
   useEffect(() => {
     if (error === null && data) {
       navigate(`/link/${data[0].id}`);
+    }
   }, [error, data]);
 
   const createNewLink = async () => {
